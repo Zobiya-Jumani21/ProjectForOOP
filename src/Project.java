@@ -6,7 +6,7 @@ public class Project extends JFrame implements ActionListener{
     Project(){
         setSize(1540,850);
         ImageIcon il = new ImageIcon(ClassLoader.getSystemResource("icons/third.jpg"));
-        Image i2 =il.getImage().getScaledInstance(1500,720,Image.SCALE_DEFAULT);
+        Image i2 =il.getImage().getScaledInstance(1366,768,Image.SCALE_DEFAULT);
         ImageIcon  i3 = new ImageIcon(i2);
         JLabel image = new JLabel(i3);
 
@@ -16,9 +16,14 @@ public class Project extends JFrame implements ActionListener{
         newInformation.setForeground(Color.BLUE);
         mb.add(newInformation);
         JMenuItem facultyInfo = new JMenuItem("New Faculty Information");
-
         facultyInfo.setBackground(Color.WHITE);
+        facultyInfo.addActionListener(this::actionPerformed);
         newInformation.add(facultyInfo);
+
+        JMenuItem student_informationInfo = new JMenuItem("New Student Information");
+        student_informationInfo.setBackground(Color.WHITE);
+        student_informationInfo.addActionListener(this::actionPerformed);
+        newInformation.add(student_informationInfo);
 
         // details
         JMenu details = new JMenu("View Details");
@@ -82,7 +87,7 @@ public class Project extends JFrame implements ActionListener{
         updatefacultyInfo.setBackground(Color.WHITE);
         updateInfo.add(updatefacultyInfo);
 
-        JMenuItem   updateStudentInfo= new JMenuItem("Update Faculty Details");
+        JMenuItem   updateStudentInfo= new JMenuItem("Update Students Details");
         updateStudentInfo.setBackground(Color.WHITE);
        updateInfo.add(updateStudentInfo);
 
@@ -156,6 +161,11 @@ public class Project extends JFrame implements ActionListener{
             catch (Exception e){
 
             }
+        }else if (msg.equals("New Faculty Information")){
+            new AddTeacher();
+        }
+        else if (msg.equals("New Student Information")){
+            new AddStudent();
         }
     }
 
