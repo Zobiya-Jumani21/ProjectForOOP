@@ -32,10 +32,12 @@ public class Project extends JFrame implements ActionListener{
 
         JMenuItem facultydetails = new JMenuItem("View Faculty Details");
         facultydetails.setBackground(Color.WHITE);
+        facultydetails.addActionListener(this::actionPerformed);
         details.add(facultydetails);
 
         JMenuItem students_details = new JMenuItem("View Students Details");
         students_details.setBackground(Color.WHITE);
+        students_details.addActionListener(this::actionPerformed);
         details.add(students_details);
 
 
@@ -46,12 +48,13 @@ public class Project extends JFrame implements ActionListener{
 
         JMenuItem facultyleave = new JMenuItem("Faculty Leave");
         facultyleave.setBackground(Color.WHITE);
+        facultyleave.addActionListener(this::actionPerformed);
         leave.add(facultyleave);
 
         JMenuItem students_leave = new JMenuItem("Student Leave");
         students_leave.setBackground(Color.WHITE);
+      students_leave.addActionListener(this::actionPerformed);
         leave.add(students_leave);
-
         // Leave Details
         JMenu leave_details = new JMenu("Leave Details");
         leave_details.setForeground(Color.RED);
@@ -166,6 +169,18 @@ public class Project extends JFrame implements ActionListener{
         }
         else if (msg.equals("New Student Information")){
             new AddStudent();
+        }
+        else if (msg.equals("View Faculty Details")){
+            new TeacherDetails();
+        }
+        else if (msg.equals("View Students Details")){
+            new StudentDetails();
+        }
+        else if (msg.equals("Faculty Leave")){
+            new TeacherLeave();
+        }
+        else if (msg.equals("Students Leave")){
+            new StudentLeave();
         }
     }
 
