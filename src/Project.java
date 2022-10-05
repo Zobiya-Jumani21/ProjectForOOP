@@ -76,6 +76,7 @@ public class Project extends JFrame implements ActionListener{
 
         JMenuItem examDetails = new JMenuItem("Examination Results");
         examDetails.setBackground(Color.WHITE);
+        examDetails.addActionListener(this::actionPerformed);
         exam.add(examDetails);
 
         JMenuItem   enterMarks= new JMenuItem("Enter Marks");
@@ -106,11 +107,12 @@ public class Project extends JFrame implements ActionListener{
 
         JMenuItem feestructure = new JMenuItem("Fee Structure");
         feestructure.setBackground(Color.WHITE);
+       feestructure.addActionListener(this::actionPerformed);
       fee_details.add(feestructure);
 
-        JMenuItem   feeForm= new JMenuItem("Student Fee Form");
-        feeForm.setBackground(Color.WHITE);
-        fee_details.add(feeForm);
+//        JMenuItem   feeForm= new JMenuItem("Student Fee Form");
+//        feeForm.setBackground(Color.WHITE);
+//        fee_details.add(feeForm);
 
         // Utility
         JMenu utility = new JMenu("Utility");
@@ -127,9 +129,21 @@ public class Project extends JFrame implements ActionListener{
         calculator.addActionListener(this);
        utility.add(calculator);
 
+        // about
+        JMenu about= new JMenu("About");
+        about.setForeground(Color.BLUE);
+
+        mb.add(about);
+
+        JMenuItem ab = new JMenuItem("about");
+        ab.setBackground(Color.WHITE);
+        ab.addActionListener(this);
+        about.add(ab);
+
+
         // exit
         JMenu exit = new JMenu("Exit");
-        exit.setForeground(Color.BLUE);
+        exit.setForeground(Color.RED);
         mb.add(exit);
 
         JMenuItem ex = new JMenuItem("exit");
@@ -201,6 +215,18 @@ public class Project extends JFrame implements ActionListener{
         }
         else if (msg.equals("Enter Marks")){
             new EnterMarks();
+        }
+        else if (msg.equals("Examination Results")){
+            new EnterMarks();
+        }
+        else if (msg.equals("Fee Structure")){
+            new FeeStructure();
+        }
+        else if (msg.equals("about")){
+            new About();
+        }
+        else {
+            setVisible(false);
         }
 }
 
