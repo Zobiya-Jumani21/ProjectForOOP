@@ -135,7 +135,7 @@ else if (ae.getSource()==add){
 
 else if (ae.getSource()==update) {
     setVisible(false);
-    //new UpdateStudent();
+    new UpdateStudents();
 }
     }
     public static void main(String[] args) {

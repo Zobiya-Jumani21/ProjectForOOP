@@ -5,7 +5,7 @@ import java.awt.event.*;
 public class Project extends JFrame implements ActionListener{
     Project(){
         setSize(1540,850);
-        ImageIcon il = new ImageIcon(ClassLoader.getSystemResource("icons/third.jpg"));
+        ImageIcon il = new ImageIcon(ClassLoader.getSystemResource("icons/0.jpg"));
         Image i2 =il.getImage().getScaledInstance(1366,768,Image.SCALE_DEFAULT);
         ImageIcon  i3 = new ImageIcon(i2);
         JLabel image = new JLabel(i3);
@@ -207,7 +207,7 @@ public class Project extends JFrame implements ActionListener{
         else if (msg.equals("Student Leave Details")){
             new StudentLeaveDetails();
         }
-        else if (msg.equals("Faculty Leave Details")){
+        else if (msg.equals("Update Faculty Details")){
             new UpdateTeacher();
         }
         else if (msg.equals("Update Students Details")){
