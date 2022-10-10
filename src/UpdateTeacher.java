@@ -2,13 +2,13 @@
 import javax.swing.*;
 import java.awt.*;
 import java.sql.ResultSet;
-import java.util.Random;
-import com.toedter.calendar.JDateChooser;
+
+
 import  java.awt.event.*;
-import  java.sql.*;
+
 
 public class UpdateTeacher extends JFrame implements ActionListener{
-    JTextField namet,fnamet,rollNumt,addresst,phonet,emailt,percent,percenxiit,nict,tfcource,tfbranch;
+    JTextField addresst,phonet,emailt,tfcource,tfbranch;
     JLabel labelempid;
     JButton submit,cancel;
     Choice cempid;
@@ -70,7 +70,7 @@ public class UpdateTeacher extends JFrame implements ActionListener{
         JLabel labelfather =new JLabel();
         labelfather.setBounds(600,150,150,30);
         labelfather.setFont(new Font("serif",Font.PLAIN,18));
-        add(labelname);
+        add(labelfather);
 
         // roll number label
         JLabel rollNum = new JLabel("Employee Id");
@@ -93,7 +93,7 @@ public class UpdateTeacher extends JFrame implements ActionListener{
         labeldof.setBounds(600,200,150,30);
         labeldof.setFont(new Font("serif",Font.PLAIN,18));
         add(labeldof);
-        //Adress label
+        //Address label
         JLabel address = new JLabel("Address");
         address.setBounds(50,250,200,30);
         address.setFont(new Font("serif",Font.BOLD,20));

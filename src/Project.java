@@ -198,7 +198,7 @@ public class Project extends JFrame implements ActionListener{
         else if (msg.equals("Faculty Leave")){
             new TeacherLeave();
         }
-        else if (msg.equals("Students Leave")){
+        else if (msg.equals("Student Leave")){
             new StudentLeave();
         }
         else if (msg.equals("Faculty Leave Details")){
@@ -217,7 +217,7 @@ public class Project extends JFrame implements ActionListener{
             new EnterMarks();
         }
         else if (msg.equals("Examination Results")){
-            new EnterMarks();
+            new ExaminationDetails();
         }
         else if (msg.equals("Fee Structure")){
             new FeeStructure();

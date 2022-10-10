@@ -39,7 +39,7 @@ public class TeacherLeave extends JFrame implements ActionListener{
             Conn c = new Conn();
             ResultSet rs = c.s.executeQuery("select * from teacher ");
             while (rs.next()){
-             cempid.add(rs.getString("rollNumG"));
+             cempid.add(rs.getString("emploidg"));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -97,12 +97,13 @@ public class TeacherLeave extends JFrame implements ActionListener{
             String duration= ctime.getSelectedItem();
 
             String query = "insert into teacherleave values('"+empid+"','"+date+"','"+duration+"')";
-            setVisible(false);
+
             try {
                 Conn conn = new Conn();
                 conn.s.executeUpdate(query);
 
                 JOptionPane.showMessageDialog(null,"Leave Confirmed");
+                setVisible(false);
             }catch (Exception f){
                 f.printStackTrace();
             }
@@ -112,6 +113,7 @@ public class TeacherLeave extends JFrame implements ActionListener{
 
     }
     public static void main(String[] args) {
+
         new TeacherLeave();
     }
 }

@@ -63,6 +63,7 @@ public class Login extends JFrame implements ActionListener{
         if(e.getSource()==login){
 String username = juserName.getText();
 String password=jpass.getText();
+// insert into login values ('admin','12345')commond for mysql data create
 
 String query = "select * from login where username='"+username+"' and password='"+password+"'";
 

@@ -28,6 +28,7 @@ public class StudentLeave extends JFrame implements ActionListener{
         lblrollNUM.setBounds(60,100,200,20);
         lblrollNUM.setFont(new Font("serif",Font.PLAIN,18));
         add(lblrollNUM);
+
 // box of roll num
         crollno= new Choice();
         crollno.setBounds(60,130,200,20);
@@ -44,12 +45,12 @@ public class StudentLeave extends JFrame implements ActionListener{
             e.printStackTrace();
         }
 
-        // label of roll num
+        // label of date
         JLabel lblDate= new JLabel("Date");
         lblDate.setBounds(60,180,200,20);
         lblDate.setFont(new Font("serif",Font.PLAIN,18));
         add(lblDate);
-//Calender
+//Calender //
         LDate = new JDateChooser();
         LDate.setBounds(60,210,200,25);
         add(LDate);
@@ -96,12 +97,13 @@ public class StudentLeave extends JFrame implements ActionListener{
  String duration= ctime.getSelectedItem();
 
  String query = "insert into studentleave values('"+rollno+"','"+date+"','"+duration+"')";
- setVisible(false);
+
  try {
      Conn conn = new Conn();
      conn.s.executeUpdate(query);
 
      JOptionPane.showMessageDialog(null,"Leave Confirmed");
+     setVisible(false);
  }catch (Exception f){
      f.printStackTrace();
  }

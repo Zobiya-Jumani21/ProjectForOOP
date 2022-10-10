@@ -31,7 +31,7 @@ public class TeacherDetails extends JFrame implements ActionListener{
             Conn c = new Conn();
             ResultSet rs = c.s.executeQuery("select * from teacher ");
             while (rs.next()){
-                cempId.add(rs.getString("empidg"));
+                cempId.add(rs.getString("emploidg"));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -111,7 +111,7 @@ public class TeacherDetails extends JFrame implements ActionListener{
 
         else if (ae.getSource()==search){
 
-            String query = "select * from teacher where empidg = '"+cempId.getSelectedItem()+"'";
+            String query = "select * from teacher where emploidg = '"+cempId.getSelectedItem()+"'";
             try{
                 Conn c = new Conn();
                 ResultSet rs = c.s.executeQuery(query);

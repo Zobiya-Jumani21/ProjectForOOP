@@ -30,7 +30,7 @@ public class TeacherLeaveDetails extends JFrame implements ActionListener{
             Conn c = new Conn();
             ResultSet rs = c.s.executeQuery("select * from teacher ");
             while (rs.next()){
-                cempid.add(rs.getString("empid"));
+                cempid.add(rs.getString("emploidg"));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -91,10 +91,9 @@ public class TeacherLeaveDetails extends JFrame implements ActionListener{
         if (ae.getSource()==cancel){
             setVisible(false);
         }
-
         else if (ae.getSource()==search){
 
-            String query = "select * from teacherleave where rollno = '"+cempid.getSelectedItem()+"'";
+            String query = "select * from teacherleave where empid = '"+cempid.getSelectedItem()+"'";
             try{
                 Conn c = new Conn();
                 ResultSet rs = c.s.executeQuery(query);

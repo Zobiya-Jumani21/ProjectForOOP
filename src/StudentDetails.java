@@ -4,10 +4,11 @@ import javax.swing.*;
 import javax.xml.transform.Result;
 import  java.awt.*;
 import  java.sql.*;
-import net.proteanit.sql.DbUtils;
+import net.proteanit.sql.DbUtils; // rs2xml
 import java.awt.event.*;
 public class StudentDetails extends JFrame implements ActionListener{
-Choice crollno;
+
+    Choice crollno; //dropdown by choice method
 JButton search,print,update,add,cancel;
 JTable jtable;
     StudentDetails(){
@@ -40,12 +41,12 @@ JTable jtable;
         try {
             Conn c = new Conn();
             ResultSet rs = c.s.executeQuery("select * from student ");
-           jtable.setModel(DbUtils.resultSetToTableModel(rs));
+           jtable.setModel(DbUtils.resultSetToTableModel(rs)); //  value insert in table
         }catch (Exception e){
             e.printStackTrace();
       }
 
-        JScrollPane jsp = new JScrollPane(jtable);
+        JScrollPane jsp = new JScrollPane(jtable); // for the scrollbar
         jsp.setBounds(0,100,1000,700);
         add(jsp);
 

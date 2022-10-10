@@ -18,7 +18,7 @@ public class ExaminationDetails extends JFrame implements ActionListener{
         heading.setBounds(80,15,400,50);
         heading.setFont(new Font("Tahoma",Font.BOLD,24));
         add(heading);
-
+// search y rollnum
         search  = new JTextField();
         search.setBounds(80,90,200,30);
         search.setFont(new Font("Tahoma",Font.PLAIN,18));
@@ -71,7 +71,7 @@ public class ExaminationDetails extends JFrame implements ActionListener{
     }
     public void actionPerformed(ActionEvent e){
 if (e.getSource()==submit){
-    setVisible(false);
+   setVisible(false);
     new  Marks(search.getText());
 }else {
     setVisible(false);

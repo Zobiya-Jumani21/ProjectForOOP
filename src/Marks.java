@@ -83,12 +83,12 @@ public class Marks extends JFrame implements ActionListener {
                 subject5.setText(rs1.getString("subject5"));
             }
             ResultSet rs2 = c.s.executeQuery("select * from marks where rollno ='"+rollno+"'");
-            while (rs1.next()){
+            while (rs2.next()){
                 subject1.setText(subject1.getText() + "---------------" + rs2.getString("marks1"));
-                subject2.setText(subject2.getText() + "---------------"+rs2.getString("marks2"));
-                subject3.setText(subject3.getText() +  "---------------"+rs2.getString("marks3"));
-                subject4.setText(subject4.getText()+"---------------"+rs2.getString("marks4"));
-                subject5.setText(subject5.getText()+"---------------"+rs2.getString("marks5"));
+                subject2.setText(subject2.getText() + "---------------" +rs2.getString("marks2"));
+                subject3.setText(subject3.getText() +  "---------------" +rs2.getString("marks3"));
+                subject4.setText(subject4.getText()+ "---------------"+ rs2.getString("marks4"));
+                subject5.setText(subject5.getText()+"---------------"+ rs2.getString("marks5"));
                 lblsemester.setText("semester"+rs2.getString("semester"));
 
 
@@ -108,6 +108,7 @@ public class Marks extends JFrame implements ActionListener {
         setVisible(true);
     }
     public void actionPerformed(ActionEvent e){
+
         setVisible(false);
     }
     public static void main(String[] args) {

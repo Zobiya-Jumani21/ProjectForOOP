@@ -7,7 +7,7 @@ import  java.awt.event.*;
 import  java.sql.*;
 
 public class UpdateStudents extends JFrame implements ActionListener{
-    JTextField namet,fnamet,rollNumt,addresst,phonet,emailt,percent,percenxiit,nict,tfcource,tfbranch;
+    JTextField addresst,phonet,emailt,tfcource,tfbranch;
     JLabel labelrollNum;
     JButton submit,cancel;
     Choice crollno;
@@ -20,7 +20,7 @@ public class UpdateStudents extends JFrame implements ActionListener{
         setLayout(null);
 
         //heading
-        JLabel heading = new JLabel("Update Student Details");
+        JLabel heading = new JLabel("Update Students Details");
         heading.setBounds(50,10,500,50);
         heading.setFont(new Font("Tahoma",Font.ITALIC,35));
         add(heading);
@@ -69,7 +69,7 @@ public class UpdateStudents extends JFrame implements ActionListener{
         JLabel labelfather =new JLabel();
         labelfather.setBounds(600,150,150,30);
         labelfather.setFont(new Font("serif",Font.PLAIN,18));
-        add(labelname);
+        add(labelfather);
 
         // roll number label
         JLabel rollNum = new JLabel("Roll Number");
@@ -179,7 +179,7 @@ public class UpdateStudents extends JFrame implements ActionListener{
            String query = "select * from student where rollNumG='"+crollno.getSelectedItem()+"'";
            ResultSet rs = c.s.executeQuery(query);
            while (rs.next()){
-labelname.setText(rs.getString("nameg"));
+
                labelname.setText(rs.getString("nameg"));
                labelfather.setText(rs.getString("fatherg"));
                labeldof.setText(rs.getString("DoB"));
@@ -198,7 +198,8 @@ labelname.setText(rs.getString("nameg"));
         }catch (Exception c){
             c.printStackTrace();
         }
-crollno.addItemListener(new ItemListener() {
+// change rollnum change data
+        crollno.addItemListener(new ItemListener() {
     @Override
     public void itemStateChanged(ItemEvent e) {
         try {

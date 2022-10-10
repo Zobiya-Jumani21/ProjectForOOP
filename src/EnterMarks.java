@@ -31,7 +31,6 @@ public class EnterMarks extends JFrame implements ActionListener{
         // search by roll number
         JLabel lblrollnum = new JLabel("Select By Roll Number");
         lblrollnum.setBounds(50,70,150,20);
-        //lblrollnum.setFont(new Font("serif",Font.PLAIN,20));
         add(lblrollnum);
 
         crollno= new Choice();
@@ -53,7 +52,7 @@ public class EnterMarks extends JFrame implements ActionListener{
         JLabel lblsemester = new JLabel("Select Semester");
         lblsemester.setBounds(50,110,150,20);
         add(lblsemester);
-
+//comboBox
         String semester[]={"1st semester","2nd semester","3rd semester","4th semester","5th semester","6th semester","7th semester","8th semester"};
 
         cbsemester = new JComboBox(semester);
